@@ -1,5 +1,5 @@
 Feature: Login Functionality
-@failed
+
 Scenario: Login page logo
 	Given Launch the Cogmento application
   And Click "Log In" button on welcome page
