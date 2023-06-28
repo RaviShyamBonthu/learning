@@ -13,16 +13,14 @@ public class DealsPage {
     public DealsPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
-
-    @FindBy(xpath = "//span[@class='item-text' and text()='Deals']") WebElement leftPanelEntity;
-    public void navigateToCases() throws InterruptedException {
-        leftPanelEntity.click();
-        Thread.sleep(10000);
+    @FindBy (xpath = "//span[@class='item-text' and text()='Deals']") WebElement leftPanelEnity;
+    public void navigateToDealsPage() throws InterruptedException {
+        leftPanelEnity.click();
+        Thread.sleep(1000);
     }
-
     @FindBy(xpath="//span[@class='selectable ' and text()='Deals']") WebElement dealsHeader;
     public void verifyDealsText(){
-        System.out.println("cases text verification");
+        System.out.println("deals text verification");
         String dealsHeaderText = dealsHeader.getText();
         assertEquals(dealsHeaderText,"Deals");
         System.out.println("verification completed");
@@ -34,13 +32,13 @@ public class DealsPage {
     }
 
     public void enterFields() throws InterruptedException {
-        titleField.sendKeys("TestCases");
+        titleField.sendKeys("TestDeals");
         Thread.sleep(3000);
     }
 
 
-    public void navigateToDeals() {
-    }
+
+
 }
 
 
