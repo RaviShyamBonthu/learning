@@ -1,5 +1,5 @@
 Feature: Cases Functionality verification
-
+  @Test
   Scenario: verify user landed on deals page
     Given Launch the Cogmento application
     And Click "Log In" button on welcome page
@@ -10,4 +10,4 @@ Feature: Cases Functionality verification
     Then User navigates to the Deals page
     And verifies the Deals text
     When User click on create button
-    And user enter fields in deals module
+    And user enter fields in cases module
