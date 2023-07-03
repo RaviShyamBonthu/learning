@@ -5,6 +5,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -36,6 +37,11 @@ public class Hooks{
 	
 	public static void launchApplication() {
 		driver.get(url);
+	}
+	public static String getRandomString(String prefix,int length){
+		int randomStringLen = length-prefix.length();
+		String generatedString = RandomStringUtils.randomAlphanumeric(randomStringLen);
+		return prefix.concat(generatedString);
 	}
 	
 	@After(order = 1)

@@ -1,5 +1,5 @@
 Feature: Dashboard
-
+@Test
   Scenario: View dashboard
     Given Launch the Cogmento application
     And Click "Log In" button on welcome page
