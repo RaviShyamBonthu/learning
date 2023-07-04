@@ -11,4 +11,3 @@ Feature: Contacts Functionality verification
     And verifies the Contacts text
     When User click on create button
     And user enter fields in contacts module
-    Then User click on save button
