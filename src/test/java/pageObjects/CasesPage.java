@@ -50,28 +50,10 @@ public class CasesPage {
         createButton.click();
     }
 
-    public void selectItemFromDropdown(String sDropdownItem, String sSearchValue) {
-        By locTxtDropDown = By.xpath(String.format(pageDropDown, sDropdownItem));
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locTxtDropDown)).click();
-        //select the text in drop down.
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(String.format(selectValueDropDown, sSearchValue))));
-        //click on element in select value in drop down
-        driver.findElement(By.xpath(String.format(selectValueDropDown, sSearchValue))).click();
-    }
-
     public void enterFields(HashMap<String, String> objMapCaseFields) throws InterruptedException {
         if (objMapCaseFields.containsKey("Title")) {
             titleField.sendKeys(objMapCaseFields.get("Title"));
         }
-//        String dropDownTxt = "";
-//        if (objMapCaseFields.containsKey("DropDown")) {
-//            dropDownTxt = objMapCaseFields.get("DropDown");
-//        }
-//        if(objMapCaseFields.containsKey("selectItem")) {
-//            selectItemFromDropdown(dropDownTxt,objMapCaseFields.get("selectItem"));
-//        }
-        Thread.sleep(2000);
     }
 
     public void clickOnSaveButton() {

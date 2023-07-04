@@ -47,14 +47,4 @@ public class CasesSteps {
         cmp.createdCasesSuccess();
     }
 
-
-//    @When("User click on create button")
-//    public void userClickOnCreateButton() {
-//        cmp.createCases();
-//    }
-
-//    @And("Enter the field in cogmento module")
-//    public void enterTheFieldInCogmentoModule() {
-//        cmp.enterFields();
-//    }
 }
