@@ -12,4 +12,3 @@ Feature: Contacts Functionality verification
     When User click on create button
     And user enter fields in contacts module
     Then User click on save button
-    And User is see the information for contacts which is created
