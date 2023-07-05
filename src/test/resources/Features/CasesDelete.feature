@@ -15,5 +15,6 @@ Feature: Delete the Created Cases
     And User is see the information on cases page are created
     Then user is navigate leftpanelEntity for cases
     And user is delete the created cases
+    Then verify the list is deleted
 
 

@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -154,6 +155,16 @@ public class CasesDelete {
     public void clickOnDelete(String sValue, String sOperator) {
         checkPopupIsDisplayed(sValue);
         performOperationOnPopUp(sOperator);
+    }
+
+    public void verifyCasesListNotDisplay(String selectVal) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='selectable ']")));
+        By eleTable = By.xpath(String.format(tdLocator, selectVal));
+//        WebElement eleTableList = driver.findElement(eleTable);
+        System.out.println(driver.getPageSource().contains(selectVal));
+        Assert.assertFalse(driver.getPageSource().contains(selectVal));
+
     }
 
 

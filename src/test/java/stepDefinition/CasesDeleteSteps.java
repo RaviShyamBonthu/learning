@@ -61,4 +61,8 @@ public class CasesDeleteSteps {
         cd.clickOnDelete("Confirm Deletion","DELETE");
     }
 
+    @Then("verify the list is deleted")
+    public void verifyTheListIsDeleted() {
+        cd.verifyCasesListNotDisplay(caseTitle);
+    }
 }

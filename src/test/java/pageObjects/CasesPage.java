@@ -42,7 +42,6 @@ public class CasesPage {
     @FindBy(xpath = "//button[text()='Create']") WebElement createButton;
     @FindBy(xpath = "//input[@name='title']") WebElement titleField;
     @FindBy(xpath = "//label[text()='Assigned To']/following-sibling::div[@class='ui fluid selection dropdown']") WebElement assignedDropDown;
-    String selectValueDropDown = "//div[@class='visible menu transition']/div/span[text()='%s']";
     @FindBy(xpath = "//i[@class='save icon']") WebElement saveButton;
     @FindBy(xpath = "//span[@class='selectable ']") WebElement caseCreatedHeader;
 
