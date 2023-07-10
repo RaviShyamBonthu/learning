@@ -27,7 +27,7 @@ public class CasesPage {
 
     public void navigateToCases() throws InterruptedException {
         leftPanelEntity.click();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
     }
 
     @FindBy(xpath = "//span[@class='selectable ' and text()='Cases']") WebElement casesHeader;

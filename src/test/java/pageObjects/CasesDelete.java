@@ -30,7 +30,6 @@ public class CasesDelete {
     }
 
     public void navigateCasesPage() throws InterruptedException {
-        Thread.sleep(2000);
         leftPanelEntity.click();
         Thread.sleep(2000);
     }
@@ -164,7 +163,6 @@ public class CasesDelete {
 //        WebElement eleTableList = driver.findElement(eleTable);
         System.out.println(driver.getPageSource().contains(selectVal));
         Assert.assertFalse(driver.getPageSource().contains(selectVal));
-
     }
 
 
