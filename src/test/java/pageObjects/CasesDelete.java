@@ -30,6 +30,9 @@ public class CasesDelete {
     }
 
     public void navigateCasesPage() throws InterruptedException {
+//        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+//        wait.until(ExpectedConditions.elementToBeClickable(leftPanelEntity));
+        Thread.sleep(2000);
         leftPanelEntity.click();
         Thread.sleep(2000);
     }
@@ -147,7 +150,8 @@ public class CasesDelete {
         assertTrue(caseCreatedHeader.isDisplayed());
     }
 
-    public void deleteCreatedCases(String sSelectValue,String sOperation) {
+    public void deleteCreatedCases(String sSelectValue,String sOperation) throws InterruptedException {
+         navigateCasesPage();
          performTableOperation(sSelectValue,sOperation);
     }
 

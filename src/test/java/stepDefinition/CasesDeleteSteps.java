@@ -50,18 +50,13 @@ public class CasesDeleteSteps {
         cd.casesCreated();
     }
 
-    @Then("user is navigate leftpanelEntity for cases")
-    public void userIsNavigateLeftpanelEntityForCases() throws InterruptedException {
-       cd.navigateCasesPage();
-    }
-
-    @And("user is delete the created cases")
-    public void userIsDeleteTheCreatedCases() {
+    @Then("user is delete the created cases")
+    public void userIsDeleteTheCreatedCases() throws InterruptedException {
         cd.deleteCreatedCases(caseTitle,"delete");
         cd.clickOnDelete("Confirm Deletion","DELETE");
     }
 
-    @Then("verify the list is deleted")
+    @And("verify the list is deleted")
     public void verifyTheListIsDeleted() {
         cd.verifyCasesListNotDisplay(caseTitle);
     }
