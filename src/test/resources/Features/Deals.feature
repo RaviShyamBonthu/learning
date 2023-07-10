@@ -1,5 +1,5 @@
 Feature: Deals Functionality verification
-
+@Deals
   Scenario: verify user landed on deals page
     Given Launch the Cogmento application
     And Click "Log In" button on welcome page

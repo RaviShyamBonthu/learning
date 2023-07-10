@@ -1,5 +1,5 @@
 Feature: Cases Functionality verification
-  
+  @Test
   Scenario: verify user landed on cases page
     Given Launch the Cogmento application
     And Click "Log In" button on welcome page

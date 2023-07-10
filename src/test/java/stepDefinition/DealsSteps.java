@@ -17,19 +17,15 @@ public class DealsSteps {
 
     }
 
-    @Then("verifies the Deals text")
-    public void verifies_the_deals_text() {
-        verifies_the_deals_text();
+    @And("User verify the deals title")
+    public void user_verify_the_deals_title() {
+        dealsPage.verifyDealsText();
+    }
+    @Then("user click on create button")
+    public void user_click_on_create_button() {
+        dealsPage.createDeals();
     }
 
-    @When("User click on create button")
-    public void userClickOnCreateButton() {
-       dealsPage.createDeals();
-    }
 
-    @And("user enter fields in cases module")
-    public void userEnterFieldsInCasesModule() throws InterruptedException {
-        dealsPage.enterFields();
-    }
 
 }

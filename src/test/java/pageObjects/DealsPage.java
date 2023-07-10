@@ -22,7 +22,7 @@ public class DealsPage {
     public void verifyDealsText(){
         System.out.println("deals text verification");
         String dealsHeaderText = dealsHeader.getText();
-        assertEquals(dealsHeaderText,"Deals");
+        assertEquals("Deals", dealsHeaderText);
         System.out.println("verification completed");
     }
     @FindBy(xpath = "//button[text()='Create']") WebElement createButton;
