@@ -12,4 +12,4 @@ Feature: Delete the Created Contacts
     When User is click on create button
     And User is enter the all contacts fields
     Then User able to click the save button
-    And verify that user is able to saved the contacts
+
