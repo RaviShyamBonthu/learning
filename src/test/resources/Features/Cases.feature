@@ -38,6 +38,22 @@ Feature: Cases Functionality verification
         And Verify that user is able to see the deleted case in ribbish Bin
         Then given as print cases page of Rubbish Bin
 
+        @Pass3
+        Scenario: Verify that user ia able to delete the created case in purge
+          Then User is navigate to the case page
+          And verify that user is able to there in cases page
+          When User is click on create button
+          And User is able fill the cases page fields
+          Then User is able to the click on save button
+          And User is verify that case created
+          Then User is able to delete the create case
+          And User is verify that created case deleted
+          Then User is click on RubbishBin
+          And User is able to click on deleted check box in rubbishBin page
+          Then user is able click on purge button
+
+
+
 
 
 

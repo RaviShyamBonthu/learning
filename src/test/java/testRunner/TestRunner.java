@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 //  features = "Features/.feature",
    features = "src/test/resources/Features",
    glue = "stepDefinition",
-   tags = "@Pass2",
+   tags = "@Pass3",
    plugin = {"pretty", "html:src/test/resources/Reports/CucumberTestReport.html"}
    )
 
