@@ -36,6 +36,7 @@ Feature: Cases Functionality verification
         And verify that user is able to delete the created case
         Then user is able to click on Rubbish Bin
         And Verify that user is able to see the deleted case in ribbish Bin
+        Then given as print cases page of Rubbish Bin
 
 
 

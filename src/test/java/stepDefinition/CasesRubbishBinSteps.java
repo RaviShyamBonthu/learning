@@ -64,7 +64,12 @@ public class CasesRubbishBinSteps {
     }
 
     @And("Verify that user is able to see the deleted case in ribbish Bin")
-    public void verifyThatUserIsAbleToSeeTheDeletedCaseInRibbishBin() throws InterruptedException {
+    public void verifyThatUserIsAbleToSeeTheDeletedCaseInRibbishBin() {
         cpr.selectedCheckBox(caseTitle);
+    }
+
+    @Then("given as print cases page of Rubbish Bin")
+    public void givenAsPrintCasesPageOfRubbishBin() {
+        System.out.println("Created Case in RubbishBin");
     }
 }
