@@ -15,15 +15,15 @@ import java.util.HashMap;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class ContactsPageAllFields {
-
+public class DeleteContactsPage {
     private WebDriver driver = Hooks.driver;
 
-    public ContactsPageAllFields(WebDriver driver) {
+    public DeleteContactsPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//span[@class='item-text' and text()='Contacts']") WebElement leftPanelEntity;
+    @FindBy(xpath = "//span[@class='item-text' and text()='Contacts']")
+    WebElement leftPanelEntity;
 
     public void navigateContactsPage() throws InterruptedException {
         leftPanelEntity.click();
@@ -94,7 +94,69 @@ public class ContactsPageAllFields {
         wait.until(ExpectedConditions.visibilityOf(contactHeader));
         assertTrue(contactHeader.isDisplayed());
     }
+    public void performTableOperation(String sSearchValue, String operation) {
+        //find the Search value is displayed in the table
+        By eleTable = By.xpath(String.format(tdLocator, sSearchValue));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(eleTable));
+         switch (operation) {
+            case "view": {
+                driver.findElement(By.xpath(String.format(viewXPath, sSearchValue)));
+                //Check page header
+                //checkPageHeader(sSearchValue, "view page is not displayed");
+                break;
+            }
+            case "edit": {
+                driver.findElement(By.xpath(String.format(editXPath, sSearchValue)));
+                // Check Page header
+                //checkPageHeader(sSearchValue, "Edit page is not displayed");
+                break;
+            }
+            case "delete": {
+                driver.findElement(By.xpath(String.format(deleteXPath, sSearchValue))).click();
+                //wait until popUp is displayed
+                wait.until(ExpectedConditions.visibilityOfElementLocated(dlgLocDelete));
+            }
+        }
+    }
+
+    private static By popUpPage = By.xpath("//div[@class='ui page modals dimmer transition visible active']");
+    private String popUpHeader = "//div[@class='ui page modals dimmer transition visible active']//div[@class='header' and text()='%s']";
+
+    public void checkPopupIsDisplayed(String sHeaderName) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        //wait until pop up is displayed
+        wait.until(ExpectedConditions.visibilityOfElementLocated(popUpPage));
+        By updatePopUpLoc = By.xpath(String.format(popUpHeader, sHeaderName));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(updatePopUpLoc));
+    }
+
+    private static By popUpHeader1 = By.xpath("//div[@class='ui modal transition visible active']");
+    private static final String buttonOnPopup = "//div[@class='ui page modals dimmer transition visible active']//button[text()='%s']";
+
+    //Perform action on popup
+    public void performOperationOnPopUp(String sOperation) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(popUpHeader1));
+        String sButton = "";
+        switch (sOperation.toUpperCase()) {
+            case "OK":
+                sButton = "OK";
+                break;
+            case "CANCEL":
+                sButton = "Cancel";
+                break;
+            case "DELETE":
+                sButton = "Delete";
+                break;
+        }
+        By popUpButtonLoc = By.xpath(String.format(buttonOnPopup, sButton));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(popUpButtonLoc));
+        driver.findElement(popUpButtonLoc).click();
+    }
+
 
 }
+
 
 
