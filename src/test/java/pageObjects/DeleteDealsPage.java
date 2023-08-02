@@ -172,6 +172,7 @@ public class DeleteDealsPage {
         //By eleTable = By.xpath(String.format(tdLocator, selectVal));
         // WebElement eleTableList = driver.findElement(eleTable);
         Thread.sleep(2000);
+        System.out.println("element is visable");
         System.out.println(driver.getPageSource().contains(selectVal));
         Assert.assertFalse(driver.getPageSource().contains(selectVal));
 
