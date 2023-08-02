@@ -153,6 +153,7 @@ public class DeleteDealsPage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(dealsCreatedHeader));
         assertTrue(dealsCreatedHeader.isDisplayed());
+        System.out.println("creation success");
     }
 
     public void deleteCreatedDeals(String sSelectValue, String sOperation) throws InterruptedException {
